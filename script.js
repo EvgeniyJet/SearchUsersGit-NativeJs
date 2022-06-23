@@ -33,14 +33,37 @@ class View {
 		}
 		return element;
 	}
+
+	createUser(userData) {
+		const userElement = this.createElement('li', 'user-prev');
+		userElement.innerHTML = `<img class="user-prev-photo" src="${userData.avatar_url}" alt="${userData.login}">
+															<span class="user-prev-name">${userData.login}</span>`;
+		this.usersList.append(userElement);
+	}
+
 }
 
+const USER_PER_PAGE = 20;
 
 class Search {
-	constructor() {
+	constructor(view) {
+		this.view = view;
 
-
+		this.view.searchInput.addEventListener('keyup', this.searchUsers.bind(this))
 	}
+
+	async searchUsers() {
+		return await fetch(`https://api.github.com/search/users?q=${this.view.searchInput.value}&per_page=${USER_PER_PAGE}`).then((res) => {
+			if (res.ok) {
+				res.json().then(res => {
+					res.items.forEach(user => this.view.createUser(user))
+				})
+			} else {
+
+			}
+		})
+	}
+
 }
 
-new Search();
+new Search(new View());
