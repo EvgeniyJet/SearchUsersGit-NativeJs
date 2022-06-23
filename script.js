@@ -1,4 +1,4 @@
-class Search {
+class View {
 	constructor() {
 		this.app = document.getElementById('app');
 		// Заголвок
@@ -24,7 +24,6 @@ class Search {
 		this.app.append(this.title);
 		this.app.append(this.searchLine);
 		this.app.append(this.main);
-
 	}
 	// Функция для создания элемента с классом
 	createElement(elemetTag, elementClass) {
@@ -33,6 +32,14 @@ class Search {
 			element.classList.add(elementClass);
 		}
 		return element;
+	}
+}
+
+
+class Search {
+	constructor() {
+
+
 	}
 }
 
