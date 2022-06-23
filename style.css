@@ -34,24 +34,6 @@
 	padding: 8px 15px;
 }
 
-.users-wrapper {
-	padding: 0;
-	width: 50%;
-	margin: 0 auto;
-}
-
-.users {
-	align-items: flex-start;
-	cursor: pointer;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.user {
-	padding-left: 100px;
-	width: 50%;
-}
-
 .user-prev {
 	align-items: center;
 	display: flex;
@@ -86,6 +68,24 @@
 	padding: 0;
 }
 
+.users-wrapper {
+	padding: 0;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.users {
+	align-items: flex-start;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.user {
+	padding-left: 100px;
+	width: 50%;
+}
+
 .btn {
 	background-color: #ccc;
 	border: 0;
@@ -95,4 +95,6 @@
 	line-height: 40px;
 	margin: 50px auto 0;
 	width: 150px;
+	text-align: center;
+	display: block;
 }
